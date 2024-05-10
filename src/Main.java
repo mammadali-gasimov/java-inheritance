@@ -73,10 +73,16 @@ public class Main {
     }
 
     public static void filterList(Employee[] list, String searchedValue) {
+        boolean isFound = false;
         for (Employee emp : list) {
             if (emp.fullName.toLowerCase().contains(searchedValue.toLowerCase())) {
+                isFound = true;
                 System.out.println(emp.toString());
             }
+        }
+
+        if (!isFound) {
+            System.out.println("Nothing was found!");
         }
     }
 }

@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -15,6 +16,7 @@ public class Main {
         System.out.println("Second Task");
         System.out.println("Enter the number of employees:");
         int numberOfEmployees = scanner.nextInt();
+        scanner.nextLine();
         Employee[] employeeList = new Employee[numberOfEmployees];
 
         for (int i = 0; i < numberOfEmployees; i++) {
@@ -25,7 +27,7 @@ public class Main {
 
         System.out.println("Do you want to make filtration? Enter Y if you want, and any other letter to exit:");
         String userChoice = scanner.nextLine();
-        if (userChoice == "Y" || userChoice == "y") {
+        if (Objects.equals(userChoice, "Y") || Objects.equals(userChoice, "y")) {
             System.out.println("Enter searched name");
             String searchInput = scanner.nextLine();
             filterList(employeeList, searchInput);
@@ -52,7 +54,6 @@ public class Main {
 
     public static Employee addEmployee() {
         System.out.println("Enter employee full name:");
-        scanner.nextLine();
         String fullName = scanner.nextLine();
         System.out.println("Enter employee age:");
         int age = scanner.nextInt();
